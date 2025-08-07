@@ -1,8 +1,17 @@
-$primary-color: #4e54c8;
-$secondary-color: #8f94fb;
+$primary-color: #2a9df4;
+$secondary-color: #0077b6;
+
+$accent-color: #90e0ef;
+$dark-color: #03045e;
+
+$text-color: #222222;
+$background-color: #f9fbfd;
+$border-color: #d0e1f9;
+
 $font-stack: 'Poppins', sans-serif;
-$success-color: #00c9ff;
-$info-color: #2193b0;
-$error-color: #f85032;
+$success-color: #38b000;
+$info-color: $accent-color;
+$error-color: #d00000;
+
 $border-radius: 8px;
 $box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
