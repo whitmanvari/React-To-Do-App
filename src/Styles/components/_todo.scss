@@ -1,3 +1,5 @@
+@use 'Styles/base/variables' as vars;
+
 .todo-form{
     display: flex;
     gap: 1rem;
@@ -5,18 +7,18 @@
     input {
         flex: 1;
         padding: 0.5rem;
-        border-radius: $border-radius;
+        border-radius: vars.$border-radius;
         border: 1px solid #ccc;
     }
     button {
-        background: $primary-color;
+        background: vars.$primary-color;
         color: white;
         border: none;
         padding: 0.5rem 1rem;
-        border-radius: $border-radius;
+        border-radius: vars.$border-radius;
         cursor: pointer;
         &:hover {
-            background: darken($primary-color, 10%);
+            background: darken(vars.$primary-color, 10%);
         }
 
     }
@@ -28,7 +30,7 @@
         background: white;
         padding: 1rem;
         margin-bottom: 1rem;
-        border-radius: $border-radius;
+        border-radius: vars.$border-radius;
         display: flex;
         justify-content: space-between;
         align-items: center;

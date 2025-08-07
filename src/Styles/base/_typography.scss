@@ -1,5 +1,7 @@
+@use 'Styles/base/variables' as vars;
+
 body{
-    font-family: $font-stack;
+    font-family: vars.$font-stack;
     font-size: 16px;
     color: #333;
     background: #f9f9f9;

@@ -1,9 +1,9 @@
-@use 'base/reset.scss';
-@use 'base/typography.scss';
-@use 'base/variables.scss';
-@use 'layout/container.scss';
-@use 'layout/grid.scss';
-@use 'components/navbar.scss';
-@use 'components/toast.scss';
-@use 'components/todo.scss';
+@use 'base/_reset.scss';
+@use 'base/_typography.scss';
+@use 'base/_variables.scss';
+@use 'layout/_container.scss';
+@use 'layout/_grid.scss';
+@use 'components/_navbar.scss';
+@use 'components/_toast.scss';
+@use 'components/_todo.scss';
 @import '~bootstrap/scss/bootstrap'

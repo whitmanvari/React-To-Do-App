@@ -1,5 +1,7 @@
+@use 'Styles/base/variables' as vars;
+
 .navbar{
-    background-color: $primary-color;
+    background-color: vars.$primary-color;
     padding: 1 rem 2 rem;
     color: white;
     display: flex;
