@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TodoForm from '../Components/TodoForm';
+import TodoList from '../Components/TodoList';
+import SearchBar from '../Components/SearchBar';
 
 
 function Todo() {
@@ -10,6 +13,7 @@ function Todo() {
   const[completed, setCompleted] = useState([]) 
   const[editMode, setEditMode]= useState(null) //which task is being edited
   const[editTask, setEditTask]=useState('')
+  const[searchTerm, setSearchTerm] = useState('')
   const handleAddTask = () => {
     if(task.trim() === '')
       return; //prevent adding empty tasks
@@ -38,6 +42,7 @@ function Todo() {
     setEditTask('')
     toast.success("Task updated successfully!")
   }
+  const filteredTasks = tasks.filter(task => task.toLowerCase().includes(searchTerm.toLowerCase()))
   const toggleComplete = (text) => {
     if(completed.includes(text)){
       setCompleted(completed.filter(item => item !== text)); //remove from completed
@@ -49,43 +54,9 @@ function Todo() {
   return (
     <div>
       <h1>TO-DO </h1>
-      <input
-        type='text'
-        placeholder='Add a new task!'
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-      />
-      <button onClick={handleAddTask}>Add Task</button>
-      {/* Display the list of tasks */}
-      <ul>
-        {tasks.map((text, key)=> (
-          <li key={key}>
-            <input
-              type='checkbox'
-              checked={completed.includes(text)}
-              onChange={() => toggleComplete(text)}
-            />
-            {editMode === text ? (
-              <>
-              <input
-              type='text'
-              value={editTask}
-              onChange={(e) => setEditTask(e.target.value)}/>
-              <button onClick={handleSaveEdit}>Save</button>
-              <button onClick={() => setEditMode(null)}>Cancel</button>
-              </>
-            ) : (
-              <>
-              <span style= {{textDecoration: completed.includes(text) ? 'line-through' : 'none'}}>
-                {text}
-                </span>
-              <button onClick={() => handleEdit(text)}>Edit</button>
-              <button onClick={() => handleDelete(text)}>Delete</button>
-              </>
-            )}
-          </li>
-        ))}
-      </ul>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <TodoForm task={task} setTask={setTask} handleAddTask={handleAddTask} />
+      <TodoList tasks={filteredTasks} completed={completed} toggleComplete={toggleComplete} handleEdit={handleEdit} handleDelete={handleDelete} editMode={editMode} editTask={editTask} setEditTask={setEditTask} setEditMode={setEditMode} handleSaveEdit={handleSaveEdit} />
       <ToastContainer position="top-center" />
     </div>
   )
