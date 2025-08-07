@@ -5,11 +5,12 @@ function TodoForm({task, setTask, handleAddTask}) {
     <div>
         <input
          type='text'
+         className='form-control mb-2'
          placeholder='Add a new task!'
          value={task}
          onChange={(e) => setTask(e.target.value)}
         />
-            <button onClick={handleAddTask}>Add Task!</button>
+            <button className='btn btn-primary' onClick={handleAddTask}>Add Task!</button>
     </div>
   )
 }

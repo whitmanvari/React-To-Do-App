@@ -1,0 +1,40 @@
+.todo-form{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    input {
+        flex: 1;
+        padding: 0.5rem;
+        border-radius: $border-radius;
+        border: 1px solid #ccc;
+    }
+    button {
+        background: $primary-color;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius;
+        cursor: pointer;
+        &:hover {
+            background: darken($primary-color, 10%);
+        }
+
+    }
+}
+.todo-list{
+    list-style: none;
+
+    li{
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: $border-radius;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .completed{
+        text-decoration: line-through;
+        opacity: 0.6;
+    }
+}

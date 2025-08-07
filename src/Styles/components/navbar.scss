@@ -1,0 +1,16 @@
+.navbar{
+    background-color: $primary-color;
+    padding: 1 rem 2 rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,19 @@
+.toastify {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast--success {
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    color: #fff;
+}
+.Toastify__toast--error {
+    background: linear-gradient(to right, #f85032, #e73827);
+    color: #fff;
+}
+.Toastify__toast-info{
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    color: #fff;
+}
