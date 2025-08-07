@@ -1,15 +1,15 @@
-@use 'Styles/base/variables' as vars;
+@use './_variables.scss' as vars;
 
-body{
+.app{
     font-family: vars.$font-stack;
     font-size: 16px;
-    color: #333;
-    background: #f9f9f9;
+    color: #eee;
+    background: #121212;
 }
 h1,h2,h3{
     font-weight: 600;
     margin-bottom: 1rem;
 }
-p{
+p{  
     margin-bottom: 0.5rem;
 }
