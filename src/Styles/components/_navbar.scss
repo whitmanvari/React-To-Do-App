@@ -24,11 +24,13 @@
         color: vars.$background-color;
         font-weight: 600;
         text-decoration: none;
-        transition: color 0.3s ease;
+        display: inline-block;
+        transition: color 0.3s ease, transform 0.3s ease;
         
         &:hover, &.active {
             color: vars.$accent-color;
             text-decoration: underline;
+            transform: scale(1.1);
         }
     }
 }

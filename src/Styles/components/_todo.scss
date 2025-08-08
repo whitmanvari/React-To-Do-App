@@ -4,13 +4,15 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
-    input {
+    .todo-input {
         flex: 1;
         padding: 0.75rem 1rem;
         border-radius: vars.$border-radius;
         border: 1px solid vars.$border-color;
         font-size: 1rem;
         font-family: vars.$font-stack;
+        background: #1e2a38;
+        color: white;
         transition: border-color 0.3s ease;
 
         &:focus {
@@ -19,7 +21,7 @@
             box-shadow: 0 0 8px vars.$accent-color;
         }
     }
-    button {
+    .todo-button {
         background: vars.$primary-color;
         color: vars.$background-color;
         border: none;
@@ -38,19 +40,76 @@
     list-style: none;
     padding: 0;
 
-    li{
-        background: vars.$background-color;
+    .todo-list-item {
+         margin-bottom: 1rem;
+    }
+
+    .todo-item{
+        background: #15202b;
         padding: 1rem 1.25rem;
-        margin-bottom: 1rem;
         border-radius: vars.$border-radius;
         display: flex;
         justify-content: space-between;
+        font-family: vars.$font-stack;
+        color: vars.$background-color;
         align-items: center;
         box-shadow: 0 1px 5px rgba(42, 157, 244, 0.15);
-    }
-    .completed{
+        
+        &.completed{
         text-decoration: line-through;
         opacity: 0.6;
-        color: vars.$dark-color;
+        color: #6c757d;
     }
+    input[type='checkbox'] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+    
+    button {
+        background: transparent;
+        border: none;
+        color: vars.$primary-color;
+        font-weight: 600;
+        margin-left: 0.75rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: vars.$secondary-color;
+        }
+    }
+    .todo-edit-input{
+        padding: 0.3rem 0.5rem;
+        border-radius: vars.$border-radius;
+        border: 1px solid vars.$primary-color;
+        background: #1c2b40;
+        color: white;
+        font-size: 1rem;
+        font-family: vars.$font-stack;
+        margin-right: 0.5rem;
+
+        &:focus {
+            outline: none;
+            border-color: vars.$accent-color;
+            box-shadow: 0 0 6px vars.$accent-color;
+        }
+    }
+    .todo-save-button, .todo-cancel-button {
+        background: vars.$primary-color;
+        border-radius: vars.$border-radius;
+        border: none;
+        padding: 0.3rem 0.7rem;
+        margin-left: 0.5rem;
+        color: vars.$background-color;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: vars.$secondary-color;
+        }
+    }
+    }
+    
 }

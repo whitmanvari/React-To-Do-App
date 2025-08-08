@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TodoItem({text, completed, toggleComplete, handleEdit, handleDelete, editMode, editTask, setEditTask, handleSaveEdit, setEditMode}) {
+function TodoItem({text, className, completed, toggleComplete, handleEdit, handleDelete, editMode, editTask, setEditTask, handleSaveEdit, setEditMode}) {
   return (
-    <div>
-        <li>
+    <div className={className}>
+        <li className={`todo-item ${completed.includes(text) ? 'completed' : ''}`}>
             <input
              type='checkbox'
              checked={completed.includes(text)}
@@ -12,19 +12,20 @@ function TodoItem({text, completed, toggleComplete, handleEdit, handleDelete, ed
                 <>
                  <input
                   type='text'
+                  className='todo-edit-input'
                   value={editTask}
                   onChange={(e) => setEditTask(e.target.value)}
                  />
-                 <button onClick={handleSaveEdit}>Save!</button>
-                 <button onClick={() => setEditMode(null)}>Cancel!</button>
+                 <button className= 'todo-save-button' onClick={handleSaveEdit}>Save!</button>
+                 <button className= 'todo-cancel-button' onClick={() => setEditMode(null)}>Cancel!</button>
                 </>
              ) : (
                 <>
                  <span style={{textDecoration: completed.includes(text) ? 'line-through' : 'none'}}>
                     {text}
                  </span>
-                 <button onClick={() => handleEdit(text)}>Edit!</button>
-                 <button onClick={() => handleDelete(text)}>Delete!</button>
+                 <button className='todo-edit-button' onClick={() => handleEdit(text)}>Edit!</button>
+                 <button className='todo-delete-button' onClick={() => handleDelete(text)}>Delete!</button>
                 </>
              )}
         </li>

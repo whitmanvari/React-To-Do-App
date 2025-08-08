@@ -52,8 +52,8 @@ function Todo() {
     }
   }
   return (
-    <div>
-      <h1>TO-DO </h1>
+    <div  style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem', fontFamily: "'Poppins', sans-serif", color: '#222' }}>
+      <h1 style={{ marginBottom: '1.5rem', color: '#0077b6'}}>TO-DO </h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <TodoForm task={task} setTask={setTask} handleAddTask={handleAddTask} />
       <TodoList tasks={filteredTasks} completed={completed} toggleComplete={toggleComplete} handleEdit={handleEdit} handleDelete={handleDelete} editMode={editMode} editTask={editTask} setEditTask={setEditTask} setEditMode={setEditMode} handleSaveEdit={handleSaveEdit} />

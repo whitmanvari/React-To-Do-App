@@ -2,15 +2,15 @@ import React from 'react'
 
 function TodoForm({task, setTask, handleAddTask}) {
   return (
-    <div>
+    <div className='todo-form'>
         <input
          type='text'
-         className='form-control mb-2'
+         className='todo-input'
          placeholder='Add a new task!'
          value={task}
          onChange={(e) => setTask(e.target.value)}
         />
-            <button className='btn btn-primary' onClick={handleAddTask}>Add Task!</button>
+            <button className='todo-button' onClick={handleAddTask}>Add Task!</button>
     </div>
   )
 }
