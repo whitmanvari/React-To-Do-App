@@ -8,11 +8,13 @@ import Mood from './Pages/Mood.jsx';
 import Navbar from './Components/Navbar.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Store} from './Store/index.jsx'
 
 function App() {
   return (
     <>
       <div className="app">
+        <Provider store = {store}>
         <Navbar />
         <Routes>
           <Route path="/" element= {<Register/>}/>
@@ -21,6 +23,7 @@ function App() {
           <Route path="/mood" element={<Mood />} />
         </Routes>
         <ToastContainer/>
+        </Provider>
       </div>
     </>
   )
